@@ -1,0 +1,55 @@
+{
+  "name": "my-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://mihir06121.github.io/my_portfolio_v2",
+  "dependencies": {
+    "@chakra-ui/icons": "",
+    "@chakra-ui/react": "",
+    "@emailjs/browser": "^3.6.2",
+    "@emotion/react": "",
+    "@emotion/styled": "",
+    "@sendgrid/mail": "^7.7.0",
+    "@testing-library/jest-dom": "",
+    "@testing-library/react": "",
+    "@testing-library/user-event": "",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "framer-motion": "",
+    "gh-pages": "^4.0.0",
+    "html-react-parser": "^1.4.14",
+    "react": "",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-dom": "",
+    "react-render-html": "^0.6.0",
+    "react-router-dom": "",
+    "react-scripts": "",
+    "web-vitals": ""
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
