@@ -166,7 +166,7 @@ const Section = () => {
               </div>
             </div>
               <h5 className="text-white p-2" style={{lineHeight:'2', height: '100%', overflow: 'scroll', textAlign: 'justify'}}>
-                My name is Mihir Panchal. I am pursuing my BSc.IT degree (last year). I like to play with cubes, sometimes sketching. I also like to flash custom roms and custom recoveries on android devices. I have an interest in web development and am looking forward to doing some projects and enhancing my skills in web development. I also have an interest in native app development.</h5>
+                My name is Mihir Panchal. I completed my BSc.IT degree this year. I like to play with cubes, sometimes sketching. I also like to flash custom roms and custom recoveries on android devices. I have an interest in web development and am looking forward to doing some projects and enhancing my skills in web development. I also have an interest in native app development.</h5>
             </div>
           </div>
         </div>
@@ -414,7 +414,7 @@ const Section = () => {
               <h4 className='text-white'>Bachelor of Science (Information &amp; Technology)</h4>
               <h5>2019 - 2022</h5>
               {/* <p><em className='text-white'>Shree L.R. Tiwari Degree College of Arts, Commerce and Science</em></p> */}
-              <p className='text-white'>Pursuing my BSc.IT degree from Shree L. R. Tiwari degree college of Arts Commerce and Science in Mumbai.</p>
+              <p className='text-white'>Completed my BSc.IT degree from Shree L. R. Tiwari degree college of Arts Commerce and Science in Mumbai.</p>
             </div>
             <div className="resume-item">
               <h4 className='text-white'>Full Stack Web Development</h4>

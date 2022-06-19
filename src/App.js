@@ -9,13 +9,6 @@ const App = () => {
   return (
     <div>
       <Section />
-    {/* <BrowserRouter>
-      <Routes>
-          <Route path="/" exact element={<Section />}/>
-          <Route path="/about" exact element={<About />} />
-          <Route path="/single-blog/:slug" exact element={<SingleBlog/>} />
-      </Routes>
-    </BrowserRouter> */}
     </div>
   );
 }
