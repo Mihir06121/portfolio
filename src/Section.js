@@ -4,6 +4,8 @@ import React, {useEffect, useState, useRef} from 'react'
 import AOS from 'aos'
 import blogData from './data/blogs'
 import emailjs from "@emailjs/browser";
+import parse from 'html-react-parser';
+// import blog from './data/blogs';
 const Section = () => {
   const form = useRef();
 
@@ -19,6 +21,8 @@ const Section = () => {
   const [qualifications, setQualifications] = useState(false)
   const [contactMe, setContactMe] = useState(false)
   const [blogs, setBlogs] = useState(false)
+  const [showBlog, setShowBlog] = useState(false)
+  const [blogContent, setBlogContent] =useState({})
 
   const showHome = () => {
     if (show) {
@@ -365,7 +369,10 @@ const Section = () => {
                     <div className="content">
                         <h1 className="text-decoration-none title">{blog.title}</h1>
                         <p className="copy">{blog.excerpt}</p>
-                        {/* <Link to={{ pathname: `single-blog/${blog.slug}`}} state={blog.slug}><button className="btn btn-lg btn-primary btn-block">View Blog</button></Link> */}
+                        <button className="btn btn-lg btn-primary btn-block" onClick={() => {
+                          setShowBlog(true)
+                          setBlogContent(blog)
+                        }}>View Blog</button>
                     </div>
                 </div>
                 {/* </Link> */}
@@ -564,9 +571,46 @@ const Section = () => {
   }
 
   return (
-    <div style={{height: '100vh', overflow: 'hidden',}} className="home-bg d-flex justify-content-center align-items-start">
-      <div className="container-fluid">
-        <div style={{height: '80%', backgroundColor: 'transparent', overflow:'scroll'}} className="hideSb d-flex pt-5 justify-content-start align-items-center">
+    <div style={{height: '100vh'}} className="home-bg d-flex justify-content-center align-items-start">
+      {showBlog ? <div style={{overFlow: "scroll"}}>
+        <div className='d-flex justify-content-between align-items-center px-5 p-3'>
+        <h1 className='text-white'>Blogs</h1>
+        <button className="btn btn btn-primary btn-block" onClick={() => {
+          setShowBlog(false)
+          setBlogContent({})
+        }}>Back</button>
+        </div>
+              <div className="container-fluid">
+                <section>
+                    <div align="center" className="container">
+                        <img
+                            src={blogContent.photo}
+                            alt={blogContent.title}
+                            className="img img-fluid featured-image"
+                        />
+                    </div>
+                </section>
+                <section>
+                    <div className="container">
+                        <h1 className="text-white display-1 pb-3 pt-3 text-center font-weight-bold">{blogContent.title}
+                        <hr style={{backgroundColor: 'white', padding: 2}} /></h1>
+                    </div>
+                </section>
+            </div>                  
+            <div className="container">
+                <section className="container text-justify text-white">  
+                    {parse(`<div align="justify">${blogContent.body}</div>`)}
+                </section>
+            </div>
+            <div className='p-md-5 p-3'>
+        <button className="btn btn btn-outline-primary col-12" onClick={() => {
+          setShowBlog(false)
+          setBlogContent({})
+        }}>Back</button>
+        </div>
+      </div> : 
+      <div className="container-fluid" style={{ overflow: 'hidden'}}>
+        <div style={{height: '80%', backgroundColor: 'transparent', overflow:'scroll'}} className="hideSb d-flex pt-5 justify-content-center align-items-center">
           <div className="row container-fluid p-0">
             <div style={{backgroundColor: 'transparent', height: '70vh'}} className="col-sm-12 justify-content-center align-items-center">
               {showHome()}
@@ -655,7 +699,7 @@ const Section = () => {
               </div>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };
