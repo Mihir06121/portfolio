@@ -544,13 +544,13 @@ const Section = () => {
           <div className="col-md-6">
           <form className='form-group' ref={form} onSubmit={sendEmail}>
             <div className='form-group p-2'>
-              <input className='form-control bg-dark border-0' placeholder='Your Name' type="text" name="user_name" />
+              <input className='form-control bg-dark border-0 text-white' placeholder='Your Name' type="text" name="user_name" />
             </div>
             <div className='form-group p-2'>
-              <input className='form-control bg-dark border-0' placeholder='Your Email' type="email" name="user_email" />
+              <input className='form-control bg-dark border-0 text-white' placeholder='Your Email' type="email" name="user_email" />
             </div>
             <div className='form-group p-2'>
-              <textarea className='form-control bg-dark border-0' placeholder='Type your message here' name="message" />
+              <textarea className='form-control bg-dark border-0 text-white' placeholder='Type your message here' name="message" />
             </div>
             <div className='p-2'>            
               <button className='btn btn-outline-primary col-12' type="submit" value="Send" >Send</button>
