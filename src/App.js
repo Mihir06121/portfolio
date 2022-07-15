@@ -39,6 +39,8 @@ import about_img from './assets/web-development.webp'
 import frame9 from './assets/Frame9.png'
 import ProjectCard from "./components/ProjectCard";
 import Resume from "./components/Resume";
+import { Outlet } from "react-router-dom";
+
 const App = () => {
 
   useEffect(() => {
@@ -49,6 +51,7 @@ const App = () => {
 
   return (
     <div style={{backgroundColor: 'black'}}>
+      <Outlet/>
     <div id="home" className="homebg" style={{height: '100vh', backgroundColor: 'black'}}>
       <div className="">
         <NavBar />
@@ -59,7 +62,7 @@ const App = () => {
           <Row>
             <Col md={8} className="pt-md-5"data-aos="fade-up" data-aos-delay="200">
               <h1 style={{ paddingBottom: 15 }} className="px-md-5 px-3">
-                Hi There!{" "}
+                Hi There !!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>

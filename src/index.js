@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
 import {
-  HashRouter,
+  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -15,14 +15,15 @@ const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
 root.render(
-  <HashRouter>
+  <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<App />}>
       {/* <Route path="blogs" element={<Blogs />} />
       <Route path="blog/:slug" element={<SingleBlog/>} /> */}
       <Route path="invoices" element={<Invoices />}>
         <Route path=":invoiceId" element={<Invoice />} />
       </Route>
+      </Route>
     </Routes>
-  </HashRouter>
+  </BrowserRouter>
 );
