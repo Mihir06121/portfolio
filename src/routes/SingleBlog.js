@@ -1,51 +1,51 @@
 import React, {useEffect, useState} from 'react'
-// import { useLocation } from 'react-router-dom';
-// import blogData from './data/blogs'
-// import parse from 'html-react-parser';
-const SingleBlog = (props) => {
-    // const location = useLocation();
-    // console.log(location);
+import parse from 'html-react-parser';
+import blog from "../data/blogs";
+import { useParams } from "react-router-dom";
+import NavBar from '../components/Navbar';
 
-    // const [blog, setBlog] = useState({})
+const SingleBlog = () => {
 
-    // useEffect(() => {
-    //     getSingleBlog()
-    // }, [])
+    const [singleBlog, setBlog] = useState({})
+    let params = useParams();
 
-    // const getSingleBlog = () => {
-    //     blogData.map((blog, i) => {
-    //         if (blog.slug === location.state) {
-    //             console.log("Blog",blog)
-    //             setBlog(blog)
-    //         }
-    //     })
-    // }
+    useEffect(() => {
+        setSingleBlog()
+    }, [])
+
+    const setSingleBlog = () => {
+        let sBlog =  blog.find(
+            (blog) => blog.slug === params.slug
+        )
+    setBlog(sBlog)
+}
+
 
     return (
-        <div>
-            Blogs
-            {/* <div className="container-fluid">
+        <div className='py-5' style={{backgroundColor:"black"}}>
+            <NavBar/>
+            <div className="container-fluid">
                 <section>
                     <div align="center" className="container">
                         <img
-                            src={blog.photo}
-                            alt={blog.title}
+                            src={singleBlog.photo}
+                            alt={singleBlog.title}
                             className="img img-fluid featured-image"
                         />
                     </div>
                 </section>
                 <section>
                     <div className="container">
-                        <h1 className="text-white display-1 pb-3 pt-3 text-center font-weight-bold">{blog.title}
+                        <h1 className="text-white display-1 pb-3 pt-3 text-center font-weight-bold">{singleBlog.title}
                         <hr style={{backgroundColor: 'white', padding: 2}} /></h1>
                     </div>
                 </section>
             </div>                  
             <div className="container">
                 <section className="container text-justify text-white">  
-                    {parse(`${blog.body}`)}
+                    {parse(`<div align="justify">${singleBlog.body}</div>`)}
                 </section>
-            </div> */}
+            </div>
         </div>
     )
 }

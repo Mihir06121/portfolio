@@ -8,6 +8,7 @@ import { ImBlog } from "react-icons/im";
 import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiFillContacts
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
@@ -34,7 +35,7 @@ const NavBar = () => {
       className={navColour ? "d-block" : "d-none"}
     >
       <Container>
-        <Navbar.Brand href="#" className="d-flex" >
+        <Navbar.Brand href="/#" className="d-flex" >
           <img src={logo} className="img-fluid logo shadow-lg" alt="Mihir Panchal" />
             {/* <span className="text-white">Mihir Panchal</span> */}
         </Navbar.Brand>
@@ -65,7 +66,7 @@ const NavBar = () => {
             <Nav.Item>
               <a className="nav-link"
                 // as={Link}
-                href="#project"
+                href="/#project"
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineFundProjectionScreen
@@ -78,7 +79,7 @@ const NavBar = () => {
             <Nav.Item>
               <a className="nav-link"
                 // as={Link}
-                href="#resume"
+                href="/#resume"
                 onClick={() => updateExpanded(false)}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /><span className=""> Resume</span>
@@ -94,6 +95,14 @@ const NavBar = () => {
               </a>
             </Nav.Item>
 
+            <Nav.Item>
+              <a className="nav-link"
+                href="/#contact"
+                rel="noreferrer"
+              >
+                <AiFillContacts style={{ marginBottom: "2px" }} /><span className=""> Contact</span>
+              </a>
+            </Nav.Item>
             {/* <Nav.Item className="fork-btn">
               <Button
                 href="https://github.com/mihir06121"
