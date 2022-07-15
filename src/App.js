@@ -10,7 +10,8 @@ import {
   AiOutlineDownCircle,
   AiFillGithub,
   AiFillInstagram,
-  AiFillContacts
+  AiFillContacts,
+  AiOutlineTwitter
 } from "react-icons/ai";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
@@ -44,6 +45,10 @@ import { Outlet } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
 const App = () => {
+
+  let date = new Date();
+  let year = date.getFullYear()
+
   const form = useRef();
   useEffect(() => {
     AOS.init({
@@ -413,7 +418,7 @@ const App = () => {
       </div>
       </div>
     </div>
-    <div id="contact" className="py-5" style={{height: '100vh', backgroundColor:'black'}}>
+    <div id="contact" className="py-5" style={{ backgroundColor:'black'}}>
     <div className="pt-5">
       <div className="bg-white m-auto col-10 rounded-pill">
         <div className="text-center nav-link">
@@ -442,7 +447,42 @@ const App = () => {
         </div>
       </div>
     </div>
-    <div id="footer" className="" style={{height: '10vh', backgroundColor:'grey'}}>
+    <hr className="my-3 bg-white" />
+    <div id="footer" className="" style={{backgroundColor:'grey'}}>
+    <Container fluid className="footer">
+      <Row>
+        <Col md="4" className="footer-copywright">
+          <h3>Designed and Developed by Mihir Panchal</h3>
+        </Col>
+        <Col md="4" className="footer-copywright">
+          <h3>Copyright © {year} mihirpanchal</h3>
+        </Col>
+        <Col md="4" className="footer-body">
+          <ul className="footer-icons">
+            <li className="social-icons">
+              <a
+                href="https://github.com/mihir06121"
+                style={{ color: "white" }}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <AiFillGithub />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="https://www.instagram.com/_mihir.panchal_"
+                style={{ color: "white" }}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <AiFillInstagram />
+              </a>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+    </Container>
     </div>
     </div>
   );
