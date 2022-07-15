@@ -33,7 +33,7 @@ const Blogs = () => {
                         <span className="text-dark display-4" style={{padding:0}}> BLOGS</span>
                     </div>
                 </div>
-                <Row className="p-5">
+                {/* <Row className="p-5">
                     {blogs.map((b, i) => (
                         <Col md={4} key={i} className="p-md-3 py-3">
                             <BlogCard
@@ -42,7 +42,7 @@ const Blogs = () => {
                             />
                         </Col>
                     ))}
-                </Row>
+                </Row> */}
             </div>
         </div>
     )

@@ -17,12 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}>
-      {/* <Route path="blogs" element={<Blogs />} />
-      <Route path="blog/:slug" element={<SingleBlog/>} /> */}
-      <Route path="invoices" element={<Invoices />}>
-        <Route path=":invoiceId" element={<Invoice />} />
-      </Route>
+      <Route path="/" element={<App />}/>
+      <Route path="blogs" element={<Blogs />}>
+        <Route path="blog/:slug" element={<SingleBlog/>} />
       </Route>
     </Routes>
   </BrowserRouter>

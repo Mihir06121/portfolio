@@ -51,7 +51,7 @@ const App = () => {
 
   return (
     <div style={{backgroundColor: 'black'}}>
-      <Outlet/>
+      {/* <Outlet/> */}
     <div id="home" className="homebg" style={{height: '100vh', backgroundColor: 'black'}}>
       <div className="">
         <NavBar />
@@ -115,7 +115,7 @@ const App = () => {
                   </Col>
                   <Col md={12} data-aos="fade-up" data-aos-delay="1100" data-aos-easing="ease-out-back">
                     <div className="bg-white m-auto col-6 rounded-pill">
-                      <a href="/invoices" className="text-center nav-link">
+                      <a href="/blogs" className="text-center nav-link">
                       <span className="text-dark"style={{padding:0}}><ImBlog size={30} style={{ marginBottom: "2px" }} /> BLOGS</span>
                       </a>
                     </div>
