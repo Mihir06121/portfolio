@@ -86,14 +86,14 @@ const NavBar = () => {
               </a>
             </Nav.Item>
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <a className="nav-link"
                 href="/blogs"
                 rel="noreferrer"
               >
                 <ImBlog style={{ marginBottom: "2px" }} /><span className=""> Blogs</span>
               </a>
-            </Nav.Item>
+            </Nav.Item> */}
 
             <Nav.Item>
               <a className="nav-link"
