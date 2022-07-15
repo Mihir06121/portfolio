@@ -129,13 +129,13 @@ const App = () => {
                       </a>
                     </div>
                   </Col>
-                  <Col md={12} data-aos="fade-up" data-aos-delay="1100" data-aos-easing="ease-out-back">
+                  {/* <Col md={12} data-aos="fade-up" data-aos-delay="1100" data-aos-easing="ease-out-back">
                     <div className="bg-white m-auto col-6 rounded-pill">
                       <a href="/blogs" className="text-center nav-link">
                       <span className="text-dark"style={{padding:0}}><ImBlog size={30} style={{ marginBottom: "2px" }} /> BLOGS</span>
                       </a>
                     </div>
-                  </Col>
+                  </Col> */}
                   <Col md={12} data-aos="fade-up" data-aos-delay="1100" data-aos-easing="ease-out-back">
                     <div className="bg-white m-auto col-6 rounded-pill">
                       <a href="/#contact" className="text-center nav-link">
