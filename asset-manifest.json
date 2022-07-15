@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.e3524781.css",
-    "main.js": "/static/js/main.eb690550.js",
+    "main.js": "/static/js/main.e7f38452.js",
     "static/media/Frame9.png": "/static/media/Frame9.615220bc3f8841951335.png",
     "static/media/Mihir_Panchal.pdf": "/static/media/Mihir_Panchal.597568d81061346fb8fc.pdf",
     "static/media/web-development.webp": "/static/media/web-development.61cc17a2ced96b7e6897.webp",
     "static/media/home.png": "/static/media/home.cc2fcc002fcdbf6dd180.png",
     "index.html": "/index.html",
     "main.e3524781.css.map": "/static/css/main.e3524781.css.map",
-    "main.eb690550.js.map": "/static/js/main.eb690550.js.map"
+    "main.e7f38452.js.map": "/static/js/main.e7f38452.js.map"
   },
   "entrypoints": [
     "static/css/main.e3524781.css",
-    "static/js/main.eb690550.js"
+    "static/js/main.e7f38452.js"
   ]
 }
