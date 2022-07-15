@@ -408,7 +408,7 @@ const App = () => {
     </div>
     <div id="resume" className="py-5" style={{backgroundColor:'black'}}>
     <div className="pt-5">
-      <div className="bg-white m-auto col-10 rounded-pill">
+      <div className="bg-white m-auto col-10 rounded-pill" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-out-back">
         <div className="text-center nav-link">
         <span className="text-dark display-4" style={{padding:0}}> RESUME</span>
         </div>
@@ -420,7 +420,7 @@ const App = () => {
     </div>
     <div id="contact" className="py-5" style={{ backgroundColor:'black'}}>
     <div className="pt-5">
-      <div className="bg-white m-auto col-10 rounded-pill">
+      <div className="bg-white m-auto col-10 rounded-pill" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-back">
         <div className="text-center nav-link">
         <span className="text-dark display-4" style={{padding:0}}> CONTACT ME</span>
         </div>
@@ -430,15 +430,18 @@ const App = () => {
           <div className="col-md-6">
           <form className='form-group' ref={form} onSubmit={sendEmail}>
             <div className='form-group p-2'>
-              <input className='form-control bg-dark border-0 text-white' placeholder='Your Name' type="text" name="user_name" />
+              <input className='form-control bg-dark border-0 text-white' placeholder='Your Name' type="text" name="user_name"
+               data-aos="fade-up" data-aos-duration="1100" data-aos-easing="ease-out-back" />
             </div>
             <div className='form-group p-2'>
-              <input className='form-control bg-dark border-0 text-white' placeholder='Your Email' type="email" name="user_email" />
+              <input className='form-control bg-dark border-0 text-white' placeholder='Your Email' type="email" name="user_email" 
+               data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out-back"/>
             </div>
             <div className='form-group p-2'>
-              <textarea className='form-control bg-dark border-0 text-white' placeholder='Type your message here' name="message" />
+              <textarea className='form-control bg-dark border-0 text-white' placeholder='Type your message here' name="message" 
+               data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-out-back"/>
             </div>
-            <div className='p-2'>            
+            <div className='p-2' data-aos="fade-up" data-aos-duration="1700" data-aos-easing="ease-out-back">            
               <button className='btn btn-outline-primary col-12' type="submit" value="Send" >Send</button>
             </div>
           </form>

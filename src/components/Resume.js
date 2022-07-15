@@ -17,23 +17,27 @@ function Resume() {
   return (
     <div>
       <Container fluid className="resume-section">
+        <div data-aos="fade-up" data-aos-duration="1500"  data-aos-easing="ease-out-back">
         <Row className="py-3 p-2" style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
             href={pdf}
             target="_blank"
-            style={{ maxWidth: "250px"}}
+            style={{ maxWidth: "250px"}} 
           >
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
         </Row>
+        </div>
 
-        <Row className="resume py-md-5 p-3">
-          <Document file={pdf} className="container d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-          </Document>
-        </Row>
+        <div data-aos="fade-up" data-aos-duration="1700"  data-aos-easing="ease-out-back">
+          <Row className="resume py-md-5 p-3">
+            <Document file={pdf} className="container d-flex justify-content-center">
+              <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+            </Document>
+          </Row>
+        </div>
 
         <Row className="py-3 p-2" style={{ justifyContent: "center", position: "relative" }}>
           <Button
