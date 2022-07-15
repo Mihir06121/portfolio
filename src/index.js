@@ -34,9 +34,6 @@ import App from "./App";
 import Expenses from "./routes/expenses";
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
-import Blogs from './routes/Blogs';
-import SingleBlog from './routes/SingleBlog';
-import './App.css'
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
@@ -46,7 +43,7 @@ root.render(
 <Routes>
   <Route path="/" element={<App />}/>
     <Route path="expenses" element={<Expenses />} />
-    <Route path="blogs" element={<Blogs />}>
+    <Route path="invoices" element={<Invoices />}>
       <Route
         index
         element={
@@ -56,7 +53,7 @@ root.render(
         }
       />
     </Route>
-      <Route path="blog/:slug" element={<SingleBlog />} />
+      <Route path="invoices/:invoiceId" element={<Invoice />} />
     <Route
       path="*"
       element={
