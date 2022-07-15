@@ -52,8 +52,8 @@ root.render(
           </main>
         }
       />
-      <Route path=":invoiceId" element={<Invoice />} />
     </Route>
+      <Route path="invoices/:invoiceId" element={<Invoice />} />
     <Route
       path="*"
       element={
