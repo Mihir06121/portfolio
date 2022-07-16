@@ -42,7 +42,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
 root.render(
-  <BrowserRouter basename="https://mihirpanchal.com">
+  <BrowserRouter>
 <Routes>
   <Route path="/" element={<App />}/>
     <Route path="expenses" element={<Expenses />} />
