@@ -1,7 +1,7 @@
 // import React from 'react';
 // import ReactDOM from "react-dom/client";
 // import {
-//   HashRouter,
+//   BrowserRouter,
 //   Routes,
 //   Route,
 // } from "react-router-dom";
@@ -15,18 +15,18 @@
 //   document.getElementById("root")
 // );
 // root.render(
-//   <HashRouter>
+//   <BrowserRouter>
 //     <Routes>
 //       <Route path="/" element={<App />}/>
 //       <Route path="blogs" element={<Blogs />}>
 //         <Route path="blog/:slug" element={<SingleBlog/>} />
 //       </Route>
 //     </Routes>
-//   </HashRouter>
+//   </BrowserRouter>
 // );
 import ReactDOM from "react-dom/client";
 import {
-  HashRouter,
+  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -42,7 +42,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
 root.render(
-  <HashRouter basename="https://mihirpanchal.com">
+  <BrowserRouter basename="https://mihirpanchal.com">
 <Routes>
   <Route path="/" element={<App />}/>
     <Route path="expenses" element={<Expenses />} />
@@ -66,5 +66,5 @@ root.render(
       }
     />
 </Routes>
-  </HashRouter>
+  </BrowserRouter>
 );
