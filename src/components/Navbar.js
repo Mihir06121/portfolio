@@ -98,7 +98,7 @@ const NavBar = () => {
             <Nav.Item>
               <a className="nav-link"
                 href="/#contact"
-                rel="noreferrer"
+                onClick={() => updateExpanded(false)}
               >
                 <AiFillContacts style={{ marginBottom: "2px" }} /><span className=""> Contact</span>
               </a>
