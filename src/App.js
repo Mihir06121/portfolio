@@ -314,7 +314,7 @@ const App = () => {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/s.o.u.m.y.a_j.i.t/"
+                  href="https://www.instagram.com/_mihir.panchal_/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
