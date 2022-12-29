@@ -43,6 +43,7 @@ import ProjectCard from "./components/ProjectCard";
 import Resume from "./components/Resume";
 import { Outlet } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import HomeBack from "./assets/home.png"
 
 const App = () => {
 
@@ -221,37 +222,37 @@ const App = () => {
         </h1>
 
         <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="">
-            <div data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">            
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="This is JavaScript language." data-aos-duration="1000" data-aos-delay="">
+            <div data-aos="fade-up" data-aos-duration="1100"data-aos-delay="">
               <DiJavascript1 color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="This is framework which allows you to run JavaScript outside the browser." data-aos-duration="1100" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="">
               <DiNodejs color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="This is a JavaScript library, used for developing front-end." data-aos-duration="1200" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1300" data-aos-delay="">
              <DiReact color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="Fastest growing document based database management system." data-aos-duration="1300" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1400" data-aos-delay="">
             <DiMongodb color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons"data-aos="fade-up" data-aos-duration="1500" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons"data-aos="fade-up" data-toggle="tooltip" title="JavaScript library, recommended for server-side rendering." data-aos-duration="1500" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="">
             <SiNextdotjs color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons"data-aos="fade-up" data-toggle="tooltip" title="Who else don't know this?" data-aos-duration="1000" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">
             <CgCPlusPlus color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="Git is a version control for softwares." data-aos-duration="1100" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="">
             <DiGit color="white" />
             </div>
@@ -262,22 +263,22 @@ const App = () => {
           <strong className="text-primary">Tools</strong> I use
         </h1>
         <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="I use Linux as my primary OS" data-aos-duration="1000" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">
             <SiLinux color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="Light weight and robust IDE for development" data-aos-duration="1100" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1300" data-aos-delay="">
             <SiVisualstudiocode color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="I use this tool for REST api testing" data-aos-duration="1200" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="">
             <SiPostman color="white" />
             </div>
           </Col>
-          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="">
+          <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="I use heroku for temporary server deployment" data-aos-duration="1300" data-aos-delay="">
             <div data-aos="fade-up" data-aos-duration="1700" data-aos-delay="">
             <SiHeroku color="white" />
             </div>
@@ -341,7 +342,7 @@ const App = () => {
         <h2 style={{ color: "white" }} align="center" data-aos="fade-up" data-aos-delay="200">
           Here are a few <span className="text-primary">projects</span> I've worked on recently.
         </h2>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Row style={{ justifyContent: "around", paddingBottom: "10px" }}>
           <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1100" >
             <ProjectCard data-aos="fade-up" data-aos-duration="1100"
               imgPath={'https://github.com/prashantpaddune/Drive2park/raw/v2/screenshots/Screenshot%20from%202020-06-02%2014-48-17.png?raw=true'}
@@ -357,29 +358,32 @@ const App = () => {
 
           <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
-              imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/covid_tracker_01.png?raw=true'}
+              imgPath={HomeBack}
               isBlog={false}
-              title="Covid-19 Tracker"
-              description="Another API based REACT.js application but for a change I used Material-UI to
-              style this application. This was a small challange for me as I was new to this
-              Material-UI and it took a while for me to understand its styling concepts."
-              ghLink="https://github.com/Mihir06121/Covid-19-Tracker"
+              title="Muskanlabel"
+              description="Muskanlabel.com is a client-based e-commerce website. This website is currently
+              hosted on ec2-instance of AWS with Google domains. This website includes payment
+              gateway from Paytm, email services integrated with SendGrid APIs and Cloudinary
+              for media storage."
+              demoLink="https://muskanlabel.com"
             />
           </Col>
 
-          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1500">
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
-              imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/react_youtube.png?raw=true'}
+              imgPath={HomeBack}
               isBlog={false}
-              title="YouTube Clone"
-              description="I went for this project as to get better hands-on using APIs. The main challenge I
-              faced here is making the streaming column static. As it would not be a good user-experience that 
-              while a video the player scrolls while playing."
-              ghLink="https://github.com/Mihir06121/youtube-clone"        
+              title="Exam-Portal"
+              description="This is an ongoing client-based project built with mern-stack. This project has mainly
+              two user-interfaces one for the web for the admins, sub-admins and the center-
+              admins and the other for mobile devices. The exams are MCQ based and will be
+              conducted on mobile devices. This portal has email services integrated with SendGrid
+              APIs, Cloudinary for media storage and payment-gateway integrated Paytm APIs."
+              ghLink="https://github.com/Mihir06121/exam_portal"
             />
           </Col>
 
-          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1100">
+          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1100">
             <ProjectCard
               imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/technova21.png?raw=true'}
               isBlog={false}
@@ -390,7 +394,7 @@ const App = () => {
             />
           </Col>
 
-          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
               imgPath={frame9}
               isBlog={false}
@@ -399,6 +403,30 @@ const App = () => {
               native libraries, that helps me to develop this application cross platform using single
               code base. This is full stack application with NodeJS and express in the backend."
               ghLink="https://github.com/Mihir06121/Todo_React_Native"
+            />
+          </Col>
+          
+          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+            <ProjectCard
+              imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/covid_tracker_01.png?raw=true'}
+              isBlog={false}
+              title="Covid-19 Tracker"
+              description="Another API based REACT.js application but for a change I used Material-UI to
+              style this application. This was a small challange for me as I was new to this
+              Material-UI and it took a while for me to understand its styling concepts."
+              ghLink="https://github.com/Mihir06121/Covid-19-Tracker"
+            />
+          </Col>
+
+          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1500">
+            <ProjectCard
+              imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/react_youtube.png?raw=true'}
+              isBlog={false}
+              title="YouTube Clone"
+              description="I went for this project as to get better hands-on using APIs. The main challenge I
+              faced here is making the streaming column static. As it would not be a good user-experience that 
+              while a video the player scrolls while playing."
+              ghLink="https://github.com/Mihir06121/youtube-clone"        
             />
           </Col>
         </Row>
@@ -420,28 +448,28 @@ const App = () => {
     </div>
     <div id="contact" className="py-5" style={{ backgroundColor:'black'}}>
     <div className="pt-5">
-      <div className="bg-white m-auto col-10 rounded-pill" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-back">
+      <div className="bg-white m-auto col-10 rounded-pill">
         <div className="text-center nav-link">
         <span className="text-dark display-4" style={{padding:0}}> CONTACT ME</span>
         </div>
       </div>
       <div className="py-md-5 py-3">
-          <div className="container p-md-5 p-2 d-flex justify-content-center align-items-center" data-aos="fade-up" >
+          <div className="container p-md-5 p-2 d-flex justify-content-center align-items-center" >
           <div className="col-md-6">
           <form className='form-group' ref={form} onSubmit={sendEmail}>
             <div className='form-group p-2'>
               <input className='form-control bg-dark border-0 text-white' placeholder='Your Name' type="text" name="user_name"
-               data-aos="fade-up" data-aos-duration="1100" data-aos-easing="ease-out-back" />
+                />
             </div>
             <div className='form-group p-2'>
               <input className='form-control bg-dark border-0 text-white' placeholder='Your Email' type="email" name="user_email" 
-               data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out-back"/>
+               />
             </div>
             <div className='form-group p-2'>
               <textarea className='form-control bg-dark border-0 text-white' placeholder='Type your message here' name="message" 
-               data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-out-back"/>
+               />
             </div>
-            <div className='p-2' data-aos="fade-up" data-aos-duration="1700" data-aos-easing="ease-out-back">            
+            <div className='p-2' >            
               <button className='btn btn-outline-primary col-12' type="submit" value="Send" >Send</button>
             </div>
           </form>

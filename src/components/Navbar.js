@@ -36,8 +36,7 @@ const NavBar = () => {
     >
       <Container>
         <Navbar.Brand href="/#" className="d-flex" >
-          <img src={logo} className="img-fluid logo shadow-lg" alt="Mihir Panchal" />
-            {/* <span className="text-white">Mihir Panchal</span> */}
+          <span className="text-dark">Mihir Panchal</span>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -48,7 +47,6 @@ const NavBar = () => {
           <span></span>
           <span></span>
           <span></span>
-          {/* <span className="text-dark">Menu</span> */}
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
