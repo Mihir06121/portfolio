@@ -116,9 +116,9 @@ const Home = () => {
                 <Row>
                   <Col md={12} data-aos="fade-up" data-aos-delay="500" data-aos-easing="ease-out-back">
                     <div className="bg-white m-auto col-6 rounded-pill">
-                      <Link to="#about" className="text-center nav-link">
+                      <a to="#about" className="text-center nav-link">
                       <span className="text-dark"style={{padding:0}}><AiOutlineUser size={30} style={{ marginBottom: "2px" }} /> ABOUT</span>
-                      </Link>
+                      </a>
                     </div>
                   </Col>
                   <Col md={12} data-aos="fade-up" data-aos-delay="700" data-aos-easing="ease-out-back">
