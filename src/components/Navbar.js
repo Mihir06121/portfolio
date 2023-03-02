@@ -35,7 +35,7 @@ const NavBar = () => {
       className={navColour ? "d-block" : "d-none"}
     >
       <Container>
-        <Navbar.Brand href="/#" className="d-flex" >
+        <Navbar.Brand href="/" className="d-flex" >
           <span className="text-dark">Mihir Panchal</span>
         </Navbar.Brand>
         <Navbar.Toggle
