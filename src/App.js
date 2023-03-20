@@ -343,7 +343,7 @@ const App = () => {
           Here are a few <span className="text-primary">projects</span> I've worked on recently.
         </h2>
         <Row style={{ justifyContent: "around", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1100" >
+          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1100" >
             <ProjectCard data-aos="fade-up" data-aos-duration="1100"
               imgPath={'https://github.com/prashantpaddune/Drive2park/raw/v2/screenshots/Screenshot%20from%202020-06-02%2014-48-17.png?raw=true'}
               isBlog={false}
@@ -356,7 +356,7 @@ const App = () => {
             />
           </Col>
 
-          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
               imgPath={HomeBack}
               isBlog={false}
@@ -365,11 +365,22 @@ const App = () => {
               hosted on ec2-instance of AWS with Google domains. This website includes payment
               gateway from Paytm, email services integrated with SendGrid APIs and Cloudinary
               for media storage."
-              demoLink="https://muskanlabel.com"
+              // demoLink="https://muskanlabel.com"
             />
           </Col>
 
-          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+            <ProjectCard
+              imgPath={HomeBack}
+              isBlog={false}
+              title="Urban Elements"
+              description="Urban Elements is another client based project, which is a portfilio site.
+              This website is recently hosted You can check from the link below. I made a new approach with the developemnt
+              for this also implemented new UI elements. This website is also integrated with the email services."
+              demoLink="https://urbanelements.co.in"
+            />
+          </Col>
+          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
               imgPath={HomeBack}
               isBlog={false}
