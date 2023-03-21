@@ -343,7 +343,7 @@ const App = () => {
           Here are a few <span className="text-primary">projects</span> I've worked on recently.
         </h2>
         <Row style={{ justifyContent: "around", paddingBottom: "10px" }}>
-          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1100" >
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1100" >
             <ProjectCard data-aos="fade-up" data-aos-duration="1100"
               imgPath={'https://github.com/prashantpaddune/Drive2park/raw/v2/screenshots/Screenshot%20from%202020-06-02%2014-48-17.png?raw=true'}
               isBlog={false}
@@ -356,7 +356,7 @@ const App = () => {
             />
           </Col>
 
-          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
               imgPath={HomeBack}
               isBlog={false}
@@ -369,7 +369,7 @@ const App = () => {
             />
           </Col>
 
-          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
               imgPath={HomeBack}
               isBlog={false}
@@ -380,7 +380,7 @@ const App = () => {
               demoLink="https://urbanelements.co.in"
             />
           </Col>
-          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
               imgPath={HomeBack}
               isBlog={false}
@@ -394,7 +394,7 @@ const App = () => {
             />
           </Col>
 
-          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1100">
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1100">
             <ProjectCard
               imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/technova21.png?raw=true'}
               isBlog={false}
@@ -405,7 +405,7 @@ const App = () => {
             />
           </Col>
 
-          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
               imgPath={frame9}
               isBlog={false}
@@ -417,7 +417,7 @@ const App = () => {
             />
           </Col>
           
-          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1300">
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
             <ProjectCard
               imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/covid_tracker_01.png?raw=true'}
               isBlog={false}
@@ -429,7 +429,7 @@ const App = () => {
             />
           </Col>
 
-          <Col md={3} className="project-card" data-aos="fade-up" data-aos-duration="1500">
+          <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1500">
             <ProjectCard
               imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/react_youtube.png?raw=true'}
               isBlog={false}
