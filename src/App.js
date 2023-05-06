@@ -445,7 +445,7 @@ const App = () => {
     </Container>
       </div>
     </div>
-    <div id="resume" className="py-5" style={{backgroundColor:'black'}}>
+    {/* <div id="resume" className="py-5" style={{backgroundColor:'black'}}>
     <div className="pt-5">
       <div className="bg-white m-auto col-10 rounded-pill" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-out-back">
         <div className="text-center nav-link">
@@ -456,7 +456,7 @@ const App = () => {
       <Resume/>
       </div>
       </div>
-    </div>
+    </div> */}
     <div id="contact" className="py-5" style={{ backgroundColor:'black'}}>
     <div className="pt-5">
       <div className="bg-white m-auto col-10 rounded-pill">
