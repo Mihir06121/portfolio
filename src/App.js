@@ -11,7 +11,6 @@ import {
   AiFillGithub,
   AiFillInstagram,
   AiFillContacts,
-  AiOutlineTwitter
 } from "react-icons/ai";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
@@ -23,7 +22,13 @@ import {
 } from "react-icons/di";
 
 import {
+  SiAmazonaws,
+  SiDocker,
+  SiFigma,
+  SiGithubactions,
   SiNextdotjs,
+  SiNginx,
+  SiNodedotjs,
 } from "react-icons/si";
 
 import {
@@ -36,7 +41,7 @@ import {
 import { CgFileDocument } from "react-icons/cg";
 import AOS from 'aos'
 import { FaLinkedinIn } from "react-icons/fa";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import about_img from './assets/web-development.webp'
 import frame9 from './assets/Frame9.png'
 import ProjectCard from "./components/ProjectCard";
@@ -44,6 +49,7 @@ import Resume from "./components/Resume";
 import { Outlet } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import HomeBack from "./assets/home.png"
+import devSemble from "./assets/devSemble_logo.png"
 
 const App = () => {
 
@@ -71,6 +77,94 @@ const App = () => {
     );
   };
 
+  const [activeTab, setActiveTab] = useState("All");
+
+  const projects = [
+    {
+      category: "Flagship",
+      imgPath: devSemble,
+      title: "devSemble",
+      description:
+        "A community-first platform enabling hackathons, competitive coding, Sembles (internal community modules), transparent reputation scoring, GitHub integration, and CLI-based workflow automation. Built with MERN stack and designed for scalable ecosystem growth.",
+      demoLink: "https://devSemble.com",
+    },
+    {
+      category: "Flagship",
+      imgPath: HomeBack,
+      title: "Geo-Attendance & Defaulters Management System",
+      description:
+        "Led a cross-functional team during MSc.IT at Somaiya to design and deploy a geo-location based attendance mapping and automated defaulters calculation platform. Built and deployed within 1 month on AWS infrastructure. Handled peak concurrency of ~3,000 active users during attendance windows. Designed backend architecture, database models, and deployment pipeline while coordinating frontend and mobile components.",
+    },
+    {
+      category: "Production",
+      imgPath: HomeBack,
+      title: "Muskanlabel",
+      description:
+        "Muskanlabel.com is a client-based e-commerce website hosted on AWS EC2 with Google Domains. Includes Paytm payment gateway, SendGrid email services, and Cloudinary media storage integration.",
+    },
+    {
+      category: "Production",
+      imgPath: HomeBack,
+      title: "Urban Elements",
+      description:
+        "Client portfolio website hosted recently with improved UI elements and integrated email services.",
+      demoLink: "https://urbanelements.co.in",
+    },
+    {
+      category: "Production",
+      imgPath: HomeBack,
+      title: "Exam-Portal",
+      description:
+        "Ongoing MERN stack client project with two interfaces: web dashboard for admins and mobile-based MCQ exam system. Integrated SendGrid email services, Cloudinary storage, and Paytm payment gateway.",
+      ghLink: "https://github.com/Mihir06121/exam_portal",
+    },
+    {
+      category: "Other",
+      imgPath:
+        "https://github.com/prashantpaddune/Drive2park/raw/v2/screenshots/Screenshot%20from%202020-06-02%2014-48-17.png?raw=true",
+      title: "Drive2Park",
+      description:
+        "Drive2park makes it easy to find and book parking space for any location. Group project focusing mainly on frontend development.",
+      ghLink: "https://github.com/prashantpaddune/Drive2park",
+    },
+    {
+      category: "Other",
+      imgPath:
+        "https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/technova21.png?raw=true",
+      title: "Technova",
+      description:
+        "College fest website project built and deployed for Technova event.",
+      ghLink: "https://github.com/Mihir06121/TechNova",
+      demoLink: "https://technovafest.netlify.app/",
+    },
+    {
+      category: "Other",
+      imgPath: frame9,
+      title: "TODO 2.0",
+      description:
+        "First mobile development project built using React Native with NodeJS backend.",
+      ghLink: "https://github.com/Mihir06121/Todo_React_Native",
+    },
+    {
+      category: "Other",
+      imgPath:
+        "https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/covid_tracker_01.png?raw=true",
+      title: "Covid-19 Tracker",
+      description:
+        "API-based React application styled using Material-UI.",
+      ghLink: "https://github.com/Mihir06121/Covid-19-Tracker",
+    },
+    {
+      category: "Other",
+      imgPath:
+        "https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/react_youtube.png?raw=true",
+      title: "YouTube Clone",
+      description:
+        "API-based React project focused on improving streaming UI experience.",
+      ghLink: "https://github.com/Mihir06121/youtube-clone",
+    },
+  ];
+
   return (
     <div style={{ backgroundColor: 'black' }}>
       {/* <Outlet/> */}
@@ -84,24 +178,19 @@ const App = () => {
               <Row>
                 <Col md={8} className="pt-md-5" data-aos="fade-up" data-aos-delay="200">
                   <h1 style={{ paddingBottom: 15 }} className="px-md-5 px-3">
-                    Hi There !!{" "}
-                    <span className="wave" role="img" aria-labelledby="wave">
-                      👋🏻
-                    </span>
-                  </h1>
-
-                  <h1 className="px-md-5 px-3">
-                    I'M
-                    <strong className="main-name"> MIHIR PANCHAL</strong>
+                    Hi, I'm Mihir 👋
                   </h1>
                   <div className="p-md-5 px-3" style={{ textAlign: "left" }}>
-                    <h1>A</h1>
+                    <h2 style={{ color: "white", marginBottom: "15px" }}>
+                      I build scalable backend systems & product-driven platforms.
+                    </h2>
                     <Typewriter
                       options={{
                         strings: [
-                          "Developer",
-                          "MERN Stack Developer",
-                          "Open Source Contributor",
+                          "Full-Stack Product Engineer",
+                          "Backend Systems Architect",
+                          "Founder @ devSemble",
+                          "Product & Infrastructure Builder"
                         ],
                         autoStart: true,
                         loop: true,
@@ -165,144 +254,164 @@ const App = () => {
             </div>
           </div>
           <div className="container-fluid p-md-5 p-3 m-auto">
-            <div className="p-md-5 p-2" style={{ textAlign: 'justify' }}>
+            <div className="">
               <Container>
+
+                {/* ================= INTRO ================= */}
                 <Row>
-                  <Col lg={7} className="about-description" data-aos="fade-up" data-aos-delay="500">
+                  <Col lg={12} className="about-description" data-aos="fade-up">
                     <h1 style={{ fontSize: "2.6em" }}>
-                      LET ME <span className="text-primary"> INTRODUCE </span> MYSELF
+                      LET ME <span className="text-primary">INTRODUCE</span> MYSELF
                     </h1>
+
                     <p className="home-about-body">
-                      Hey, I’m Mihir 👋 I'm a <b className="text-primary">full-stack developer</b> and the founder of <b className="text-primary">DevSemble</b> — a platform that connects students and freelancers with real-world projects. DevSemble is all about helping people grow, collaborate, and gain hands-on experience, bridging the gap between learning and professional life.
-
-                      <br />
-                      <br />
-                      I recently had the opportunity to give a talk at <b className="text-primary">IIT Bombay</b> on <i>collaborative team building</i>, sharing insights on how to create effective, connected teams — a topic close to my heart and central to DevSemble’s mission.
-
-                      <br />
-                      <br />
-                      When I'm not building DevSemble, I’m working with clients to bring their ideas to life. From sleek <b className="text-primary">e-commerce sites</b> to custom <b className="text-primary">task management systems</b>, I love tackling projects that blend <i>high-quality design</i> with reliable, scalable backends.
-
-                      <br />
-                      <br />
-                      Looking ahead, I’m excited to keep expanding DevSemble’s reach and diving into new projects that push the boundaries of technology. My mission? To build solutions that <b className="text-primary">connect, empower, and inspire growth</b> in the tech community.
+                      I’m a full-stack product engineer focused on building scalable backend systems,
+                      developer platforms, and ecosystem-driven products.
+                      <br /><br />
+                      I architect modular REST systems, authentication flows, scalable database models,
+                      and production infrastructure using the MERN stack — combining backend depth,
+                      frontend usability, and strong product thinking.
                     </p>
                   </Col>
-                  <Col md={0} lg={5} className="d-none d-lg-block myAvtar d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
-                    <img src={about_img} className="img-fluid" alt="avatar" />
+                </Row>
+
+                {/* ================= FOUNDER BLOCK ================= */}
+                <Row className="mt-5">
+                  <Col md={12}>
+                    <div
+                      className="p-4 rounded-4"
+                      style={{
+                        background: "rgba(10,14,22,0.85)",
+                        // border: "1px solid rgba(88,166,255,0.2)",
+                        backdropFilter: "blur(12px)",
+                      }}
+                      data-aos="fade-up"
+                    >
+                      <h4 className="text-primary mb-2">
+                        Founder — devSemble
+                      </h4>
+
+                      <p className="mb-0 text-white">
+                        Built a community-first developer ecosystem featuring hackathons,
+                        competitive coding, internal modules (Sembles), GitHub OAuth integrations,
+                        scoring engines, role-based routing systems, and CLI-driven workflows.
+                        Designed for long-term scalability, transparency, and clean architecture.
+                      </p>
+                    </div>
                   </Col>
                 </Row>
-              </Container>
-              <Container className="">
-                <h1 className="text-white py-md-5 py-4" align="center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="">
-                  Professional <strong className="text-primary">Skillset </strong>
+
+                {/* ================= ENGINEERING CAPABILITIES ================= */}
+                <h1 className="text-white pt-5 text-center" data-aos="fade-up">
+                  Engineering <strong className="text-primary">Capabilities</strong>
+                </h1>
+
+                <Row className="mt-4" style={{ justifyContent: "center" }}>
+                  {[
+                    "Backend Architecture & REST API Design",
+                    "Scalable MongoDB Schema & Index Optimization",
+                    "JWT, OAuth & Role-Based Access Control",
+                    "AWS EC2, Nginx & Production Deployments",
+                    "Concurrency Handling & Performance Optimization",
+                    "Product-Oriented System & UX Thinking"
+                  ].map((item, index) => (
+                    <Col md={6} lg={4} key={index} className="mb-4" data-aos="fade-up">
+                      <div
+                        className="p-3 rounded-3 h-100"
+                        style={{
+                          background: "rgba(10,14,22,0.7)",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                        }}
+                      >
+                        <p className="mb-0 text-white">{item}</p>
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+
+                {/* ================= SKILLSET ================= */}
+                <h1 className="text-white py-md-5 py-4 text-center">
+                  Professional <strong className="text-primary">Skillset</strong>
+                </h1>
+
+                <Row style={{ justifyContent: "center", paddingBottom: "40px" }}>
+                  {[DiJavascript1, DiNodejs, DiReact, DiMongodb, SiNextdotjs, CgCPlusPlus, DiGit].map((Icon, index) => (
+                    <Col xs={4} md={2} key={index} className="tech-icons mb-4" data-aos="fade-up">
+                      <div
+                        className="p-3 rounded-3"
+                      >
+                        <Icon color="white" />
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+
+                {/* ================= TOOLS ================= */}
+                <h1 className="text-white py-md-5 py-4 text-center">
+                  <strong className="text-primary">Tools</strong> I Use
                 </h1>
 
                 <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="This is JavaScript language." data-aos-duration="1000" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">
-                      <DiJavascript1 color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="This is framework which allows you to run JavaScript outside the browser." data-aos-duration="1100" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="">
-                      <DiNodejs color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="This is a JavaScript library, used for developing front-end." data-aos-duration="1200" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1300" data-aos-delay="">
-                      <DiReact color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="Fastest growing document based database management system." data-aos-duration="1300" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1400" data-aos-delay="">
-                      <DiMongodb color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="JavaScript library, recommended for server-side rendering." data-aos-duration="1500" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="">
-                      <SiNextdotjs color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="Who else don't know this?" data-aos-duration="1000" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">
-                      <CgCPlusPlus color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="Git is a version control for softwares." data-aos-duration="1100" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="">
-                      <DiGit color="white" />
+                  {[SiLinux, SiVisualstudiocode, SiPostman, SiDocker, SiAmazonaws, SiNginx, SiGithubactions, SiFigma].map((Icon, index) => (
+                    <Col xs={4} md={2} key={index} className="tech-icons mb-4" data-aos="fade-up">
+                      <div
+                        className="p-3 rounded-3"
+                      >
+                        <Icon color="white" />
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+
+                {/* ================= INFRA PHILOSOPHY ================= */}
+                <Row className="mt-4">
+                  <Col md={12}>
+                    <div
+                      className="p-4 rounded-4"
+                      style={{
+                        background: "rgba(10,14,22,0.85)",
+                      }}
+                      data-aos="fade-up"
+                    >
+                      <h4 className="text-primary mb-2">Infrastructure & Workflow Philosophy</h4>
+                      <p className="mb-0 text-white">
+                        I focus on modular backend architecture, clean separation of concerns,
+                        extensible scoring systems, scalable routing logic, and production-ready
+                        infrastructure — prioritizing maintainability over short-term hacks.
+                      </p>
                     </div>
                   </Col>
                 </Row>
 
-                <h1 className="text-white py-md-5 py-4" align="center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="">
-                  <strong className="text-primary">Tools</strong> I use
-                </h1>
-                <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="I use Linux as my primary OS" data-aos-duration="1000" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1100" data-aos-delay="">
-                      <SiLinux color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="Light weight and robust IDE for development" data-aos-duration="1100" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1300" data-aos-delay="">
-                      <SiVisualstudiocode color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="I use this tool for REST api testing" data-aos-duration="1200" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="">
-                      <SiPostman color="white" />
-                    </div>
-                  </Col>
-                  <Col xs={4} md={2} className="tech-icons" data-aos="fade-up" data-toggle="tooltip" title="I use heroku for temporary server deployment" data-aos-duration="1300" data-aos-delay="">
-                    <div data-aos="fade-up" data-aos-duration="1700" data-aos-delay="">
-                      <SiHeroku color="white" />
-                    </div>
+                {/* ================= SOCIAL ================= */}
+                <Row className="mt-5">
+                  <Col md={12} className="home-about-social text-center">
+                    <h4>FIND ME ON</h4>
+                    <p>
+                      Feel free to <span className="text-primary">connect</span> with me
+                    </p>
+
+                    <ul className="home-about-social-links">
+                      <li className="social-icons">
+                        <a href="https://github.com/mihir06121" target="_blank" rel="noreferrer" className="icon-colour home-social-icons">
+                          <AiFillGithub />
+                        </a>
+                      </li>
+                      <li className="social-icons">
+                        <a href="https://www.linkedin.com/in/mihir-panchal-5167811a4/" target="_blank" rel="noreferrer" className="icon-colour home-social-icons">
+                          <FaLinkedinIn />
+                        </a>
+                      </li>
+                      <li className="social-icons">
+                        <a href="https://www.instagram.com/_mihir.panchal_/" target="_blank" rel="noreferrer" className="icon-colour home-social-icons">
+                          <AiFillInstagram />
+                        </a>
+                      </li>
+                    </ul>
                   </Col>
                 </Row>
+
               </Container>
-
-              <Row>
-                <Col md={12} className="home-about-social" data-aos="fade-up" data-aos-delay="500">
-                  <h1>FIND ME ON</h1>
-                  <p>
-                    Feel free to <span className="text-primary">connect </span>with me
-                  </p>
-                  <ul className="home-about-social-links">
-                    <li className="social-icons">
-                      <a
-                        href="https://github.com/mihir06121"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="icon-colour  home-social-icons"
-                      >
-                        <AiFillGithub />
-                      </a>
-                    </li>
-                    <li className="social-icons">
-                      <a
-                        href="https://www.linkedin.com/in/mihir-panchal-5167811a4/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="icon-colour  home-social-icons"
-                      >
-                        <FaLinkedinIn />
-                      </a>
-                    </li>
-                    <li className="social-icons">
-                      <a
-                        href="https://www.instagram.com/_mihir.panchal_/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="icon-colour home-social-icons"
-                      >
-                        <AiFillInstagram />
-                      </a>
-                    </li>
-                  </ul>
-                </Col>
-              </Row>
             </div>
           </div>
         </div>
@@ -316,108 +425,75 @@ const App = () => {
           </div>
           <Container fluid className="project-section">
             <Container>
-              <h2 style={{ color: "white" }} align="center" data-aos="fade-up" data-aos-delay="200">
-                Here are a few <span className="text-primary">projects</span> I've worked on recently.
-              </h2>
-              <Row style={{ justifyContent: "around", paddingBottom: "10px" }}>
-                <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1100" >
-                  <ProjectCard data-aos="fade-up" data-aos-duration="1100"
-                    imgPath={'https://github.com/prashantpaddune/Drive2park/raw/v2/screenshots/Screenshot%20from%202020-06-02%2014-48-17.png?raw=true'}
-                    isBlog={false}
-                    title="Drive2Park"
-                    description="Drive2park makes it easy to find and book parking space for any location. This was
-              my first group project as well as first major assigned by IIDE (Indian Institute if
-              Digital Education). I mainly worked with the frontend part along with Akshay and on
-              the backend, we had Prashant Paddune."
-                    ghLink="https://github.com/prashantpaddune/Drive2park"
-                  />
-                </Col>
 
-                <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
-                  <ProjectCard
-                    imgPath={HomeBack}
-                    isBlog={false}
-                    title="Muskanlabel"
-                    description="Muskanlabel.com is a client-based e-commerce website. This website is currently
-              hosted on ec2-instance of AWS with Google domains. This website includes payment
-              gateway from Paytm, email services integrated with SendGrid APIs and Cloudinary
-              for media storage."
-                  // demoLink="https://muskanlabel.com"
-                  />
-                </Col>
+              {/* ================= INTRO ================= */}
+              <div className=" mb-5" data-aos="fade-up">
+                <h2 className="text-white">
+                  Building <span className="text-primary">Scalable Systems</span> &
+                  Production-Ready Products
+                </h2>
 
-                <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
-                  <ProjectCard
-                    imgPath={HomeBack}
-                    isBlog={false}
-                    title="Urban Elements"
-                    description="Urban Elements is another client based project, which is a portfilio site.
-              This website is recently hosted You can check from the link below. I made a new approach with the developemnt
-              for this also implemented new UI elements. This website is also integrated with the email services."
-                    demoLink="https://urbanelements.co.in"
-                  />
-                </Col>
-                <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
-                  <ProjectCard
-                    imgPath={HomeBack}
-                    isBlog={false}
-                    title="Exam-Portal"
-                    description="This is an ongoing client-based project built with mern-stack. This project has mainly
-              two user-interfaces one for the web for the admins, sub-admins and the center-
-              admins and the other for mobile devices. The exams are MCQ based and will be
-              conducted on mobile devices. This portal has email services integrated with SendGrid
-              APIs, Cloudinary for media storage and payment-gateway integrated Paytm APIs."
-                    ghLink="https://github.com/Mihir06121/exam_portal"
-                  />
-                </Col>
+                <p
+                  className="text-light mt-3"
+                  data-aos="fade-up"
+                  data-aos-delay="150"
+                >
+                  Over the years, I’ve built community platforms, large-scale attendance systems,
+                  e-commerce infrastructures, and developer tooling ecosystems.
+                  Below are a few highlighted projects — many experimental, internal,
+                  and client builds are not listed here.
+                </p>
+              </div>
 
-                <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1100">
-                  <ProjectCard
-                    imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/technova21.png?raw=true'}
-                    isBlog={false}
-                    title="Technova"
-                    description="This project is website for the college fest Technova."
-                    ghLink="https://github.com/Mihir06121/TechNova"
-                    demoLink="https://technovafest.netlify.app/"
-                  />
-                </Col>
+              {/* ================= FILTER TABS ================= */}
+              <div
+                className="mb-5"
+                data-aos="fade-up"
+                data-aos-delay="250"
+              >
+                <div
+                  className="d-flex flex-wrap justify-content-center"
+                  style={{ gap: "12px" }}
+                >
+                  {["All", "Flagship", "Production", "Other"].map((tab) => (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={`px-4 py-2 ${activeTab === tab
+                        ? "btn btn-primary"
+                        : "btn btn-outline-light"
+                        }`}
+                      style={{
+                        borderRadius: "30px",
+                        minWidth: "110px",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      {tab}
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-                <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
-                  <ProjectCard
-                    imgPath={frame9}
-                    isBlog={false}
-                    title="TODO 2.0"
-                    description="This is my first project in field of mobile development. This project is built with react-
-              native libraries, that helps me to develop this application cross platform using single
-              code base. This is full stack application with NodeJS and express in the backend."
-                    ghLink="https://github.com/Mihir06121/Todo_React_Native"
-                  />
-                </Col>
-
-                <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1300">
-                  <ProjectCard
-                    imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/covid_tracker_01.png?raw=true'}
-                    isBlog={false}
-                    title="Covid-19 Tracker"
-                    description="Another API based REACT.js application but for a change I used Material-UI to
-              style this application. This was a small challange for me as I was new to this
-              Material-UI and it took a while for me to understand its styling concepts."
-                    ghLink="https://github.com/Mihir06121/Covid-19-Tracker"
-                  />
-                </Col>
-
-                <Col md={4} className="project-card" data-aos="fade-up" data-aos-duration="1500">
-                  <ProjectCard
-                    imgPath={'https://github.com/Mihir06121/Portfolio-v2/blob/master/src/images/assects/react_youtube.png?raw=true'}
-                    isBlog={false}
-                    title="YouTube Clone"
-                    description="I went for this project as to get better hands-on using APIs. The main challenge I
-              faced here is making the streaming column static. As it would not be a good user-experience that 
-              while a video the player scrolls while playing."
-                    ghLink="https://github.com/Mihir06121/youtube-clone"
-                  />
-                </Col>
+              {/* ================= PROJECT GRID ================= */}
+              <Row className="g-4 justify-content-center">
+                {projects
+                  .filter((project) =>
+                    activeTab === "All" ? true : project.category === activeTab
+                  )
+                  .map((project, index) => (
+                    <Col
+                      md={4}
+                      className="project-card"
+                      key={index}
+                      data-aos="fade-up"
+                      data-aos-delay={index * 100}
+                    >
+                      <ProjectCard {...project} />
+                    </Col>
+                  ))}
               </Row>
+
             </Container>
           </Container>
         </div>
