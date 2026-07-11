@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { FiArrowLeft, FiArrowUpRight } from "react-icons/fi";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { workItems } from "../../data/portfolioContent";
+import { forceScrollTopAcrossFrames } from "../../utils/scroll";
 
 function DetailList({ title, items }) {
   if (!items?.length) {
@@ -23,6 +24,10 @@ function DetailList({ title, items }) {
 function ProjectDetailPage() {
   const { slug } = useParams();
   const project = workItems.find((item) => item.slug === slug);
+
+  useLayoutEffect(() => {
+    return forceScrollTopAcrossFrames();
+  }, [slug]);
 
   if (!project) {
     return <Navigate to="/" replace />;

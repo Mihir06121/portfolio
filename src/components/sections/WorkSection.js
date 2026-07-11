@@ -1,31 +1,28 @@
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const resetScrollBeforeRouteChange = (event) => {
-  if (
-    event.defaultPrevented ||
-    event.button !== 0 ||
-    event.metaKey ||
-    event.altKey ||
-    event.ctrlKey ||
-    event.shiftKey
-  ) {
-    return;
-  }
-
-  const html = document.documentElement;
-  const previousScrollBehavior = html.style.scrollBehavior;
-
-  html.style.scrollBehavior = "auto";
-  window.scrollTo(0, 0);
-  window.requestAnimationFrame(() => {
-    html.style.scrollBehavior = previousScrollBehavior;
-  });
-};
+const isPlainLeftClick = (event) =>
+  !event.defaultPrevented &&
+  event.button === 0 &&
+  !event.metaKey &&
+  !event.altKey &&
+  !event.ctrlKey &&
+  !event.shiftKey;
 
 function WorkCard({ item }) {
+  const navigate = useNavigate();
   const externalUrl = item.liveUrl || item.link;
+  const projectPath = `/projects/${item.slug}`;
+
+  const openCaseFile = (event) => {
+    if (!isPlainLeftClick(event)) {
+      return;
+    }
+
+    event.preventDefault();
+    navigate(projectPath);
+  };
 
   return (
     <article className="case-card">
@@ -59,7 +56,7 @@ function WorkCard({ item }) {
       </div>
 
       <div className="case-actions">
-        <Link className="case-link" to={`/projects/${item.slug}`} onClick={resetScrollBeforeRouteChange}>
+        <Link className="case-link" to={projectPath} onClick={openCaseFile}>
           Read case file
           <FiArrowUpRight aria-hidden="true" />
         </Link>

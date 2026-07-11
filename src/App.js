@@ -10,6 +10,7 @@ import SignalSection from "./components/sections/SignalSection";
 import StackSection from "./components/sections/StackSection";
 import WorkSection from "./components/sections/WorkSection";
 import ProjectDetailPage from "./components/sections/ProjectDetailPage";
+import { forceScrollTop, forceScrollTopAcrossFrames } from "./utils/scroll";
 import {
   capabilityGroups,
   focusAreas,
@@ -27,6 +28,10 @@ const getInitialTheme = () => {
     return "dark";
   }
 };
+
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
 
 function ScrollManager() {
   const { pathname, hash, key } = useLocation();
@@ -54,17 +59,21 @@ function ScrollManager() {
       html.style.scrollBehavior = "auto";
     }
 
+    let cancelQueuedScroll = null;
+
     if (isPageChange && !hash) {
-      window.scrollTo(0, 0);
+      cancelQueuedScroll = forceScrollTopAcrossFrames();
     } else if (target) {
       target.scrollIntoView({ block: "start", behavior });
     } else if (!hash || isPageChange || isInitialRender) {
-      window.scrollTo(0, 0);
+      forceScrollTop();
     }
 
     if (behavior === "auto") {
       html.style.scrollBehavior = previousScrollBehavior;
     }
+
+    return () => cancelQueuedScroll?.();
   }, [pathname, hash, key]);
 
   return null;
