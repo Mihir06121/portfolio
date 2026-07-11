@@ -1,120 +1,58 @@
 import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import logo from "../assets/apple-touch-icon.png";
+import { FiDownload, FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { ImBlog } from "react-icons/im";
-import {
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-  AiFillContacts
-} from "react-icons/ai";
+import pdf from "../assets/Mihir_Panchal.pdf";
 
-import { CgFileDocument } from "react-icons/cg";
+const navLinks = [
+  { to: "/#work", label: "Work" },
+  { to: "/#stack", label: "Stack" },
+  { to: "/#experience", label: "Experience" },
+  { to: "/#resume", label: "Resume" },
+  { to: "/#contact", label: "Contact" },
+];
 
-const NavBar = () => {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+function NavBar({ theme, onThemeToggle }) {
+  const [open, setOpen] = useState(false);
+  const isDark = theme === "dark";
 
-  function scrollHandler() {
-    if (window.scrollY >= 500) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
-
-  window.addEventListener("scroll", scrollHandler);
+  const closeMenu = () => setOpen(false);
 
   return (
-    <Navbar
-      expanded={expand}
-      fixed="top"
-      expand="lg"
-      className={navColour ? "d-block" : "d-none"}
-    >
-      <Container>
-        <Navbar.Brand href="/" className="d-flex" >
-          <span className="text-dark">Mihir Panchal</span>
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+    <header className="site-nav">
+      <Link className="brand-mark" to="/#home" onClick={closeMenu} aria-label="Mihir Panchal home">
+        <span>MP</span>
+        <div>
+          <strong>Mihir Panchal</strong>
+          <small>Full-stack systems</small>
+        </div>
+      </Link>
 
-            <Nav.Item>
-              <a className="nav-link"
-                as={Link}
-                href="/#about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /><span className=""> About</span>
-              </a>
-            </Nav.Item>
+      <button
+        className="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded={open}
+        onClick={() => setOpen((current) => !current)}
+      >
+        {open ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+      </button>
 
-            <Nav.Item>
-              <a className="nav-link"
-                // as={Link}
-                href="/#project"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                <span className="">Project</span>
-              </a>
-            </Nav.Item>
-
-            <Nav.Item>
-              <a className="nav-link"
-                // as={Link}
-                href="/#resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /><span className=""> Resume</span>
-              </a>
-            </Nav.Item>
-
-            {/* <Nav.Item>
-              <a className="nav-link"
-                href="/blogs"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /><span className=""> Blogs</span>
-              </a>
-            </Nav.Item> */}
-
-            <Nav.Item>
-              <a className="nav-link"
-                href="/#contact"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiFillContacts style={{ marginBottom: "2px" }} /><span className=""> Contact</span>
-              </a>
-            </Nav.Item>
-            {/* <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/mihir06121"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item> */}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <nav className={open ? "nav-links open" : "nav-links"} aria-label="Primary navigation">
+        {navLinks.map((link) => (
+          <Link key={link.to} to={link.to} onClick={closeMenu}>
+            {link.label}
+          </Link>
+        ))}
+        <button className="theme-toggle" type="button" onClick={onThemeToggle}>
+          {isDark ? <FiSun aria-hidden="true" /> : <FiMoon aria-hidden="true" />}
+          {isDark ? "Light" : "Dark"}
+        </button>
+        <a className="nav-resume" href={pdf} download="Mihir_Panchal.pdf" onClick={closeMenu}>
+          <FiDownload aria-hidden="true" />
+          CV
+        </a>
+      </nav>
+    </header>
   );
 }
 

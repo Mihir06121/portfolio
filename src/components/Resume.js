@@ -1,56 +1,52 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import pdf from "../assets/Mihir_Panchal.pdf";
-import { AiOutlineDownload } from "react-icons/ai";
+import React, { useEffect, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import { FiDownload, FiExternalLink } from "react-icons/fi";
+import pdf from "../assets/Mihir_Panchal.pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function Resume() {
-  const [width, setWidth] = useState(1200);
+  const [pageWidth, setPageWidth] = useState(760);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const updateWidth = () => {
+      setPageWidth(Math.min(window.innerWidth - 32, 760));
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   return (
-    <div>
-      <Container fluid className="resume-section">
-        <div data-aos="fade-up" data-aos-duration="1500"  data-aos-easing="ease-out-back">
-        <Row className="py-3 p-2" style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px"}} 
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
-        </div>
+    <div className="resume-shell">
+      <div className="resume-actions">
+        <a className="button button-primary" href={pdf} download="Mihir_Panchal.pdf">
+          <FiDownload aria-hidden="true" />
+          Download CV
+        </a>
+        <a className="button button-secondary" href={pdf} target="_blank" rel="noreferrer">
+          <FiExternalLink aria-hidden="true" />
+          Open PDF
+        </a>
+      </div>
 
-        <div data-aos="fade-up" data-aos-duration="1700"  data-aos-easing="ease-out-back">
-          <Row className="resume py-md-5 p-3">
-            <Document file={pdf} className="container d-flex justify-content-center">
-              <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-            </Document>
-          </Row>
-        </div>
-
-        <Row className="py-3 p-2" style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px"}}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
-      </Container>
+      <div className="resume-preview">
+        <Document
+          file={pdf}
+          loading={<div className="resume-state">Loading resume...</div>}
+          error={<div className="resume-state">Resume preview could not load. Use the PDF actions above.</div>}
+        >
+          <Page
+            pageNumber={1}
+            width={pageWidth}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+          />
+        </Document>
+      </div>
     </div>
   );
 }
