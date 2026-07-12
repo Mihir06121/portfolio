@@ -28,9 +28,9 @@ import devsembleHomeScreenshot from "../assets/project-screens/devsemble-home.pn
 export const workFilters = ["All", "SaaS", "Platform", "Data", "Client"];
 
 export const profileStats = [
-  { value: "4+", label: "years building web products" },
-  { value: "6", label: "CondAI user groups with scoped access" },
-  { value: "5", label: "languages supported by devSemble judge" },
+  { value: "4+", label: "years building production web products" },
+  { value: "RBAC", label: "multi-role SaaS access across admin, resident, owner, tenant, and proxy flows" },
+  { value: "Judge", label: "queue-backed code evaluation with Dockerized runners and realtime feedback" },
   { value: "3K", label: "peak users handled in attendance windows" },
 ];
 

@@ -361,30 +361,101 @@ img {
   background: var(--accent);
 }
 
-.ascii-mark {
-  margin: 0;
-  padding: 24px 24px 0;
-  color: var(--text);
+.fastfetch-body {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.65fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 24px;
+  color: var(--text-soft);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: clamp(0.78rem, 1.1vw, 0.92rem);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.fastfetch-logo {
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(0.76rem, 1vw, 0.88rem);
   line-height: 1.25;
   white-space: pre;
 }
 
-.terminal-code {
-  padding: 22px 24px 24px;
-  color: var(--text-soft);
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 0.86rem;
-  line-height: 1.7;
+.fastfetch-output {
+  min-width: 0;
 }
 
-.terminal-code p {
+.fastfetch-command,
+.fastfetch-row {
   margin: 0;
 }
 
-.terminal-code span {
+.fastfetch-command {
+  color: var(--muted);
+}
+
+.fastfetch-command span,
+.fastfetch-label {
   color: var(--accent);
+}
+
+.fastfetch-identity {
+  margin: 8px 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 900;
+}
+
+.fastfetch-lines {
+  display: grid;
+  gap: 4px;
+}
+
+.fastfetch-row {
+  display: grid;
+  grid-template-columns: 72px 10px minmax(0, 1fr);
+  gap: 7px;
+}
+
+.fastfetch-label {
+  font-weight: 900;
+}
+
+.fastfetch-separator {
+  color: var(--muted);
+}
+
+.fastfetch-palette {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.fastfetch-palette span {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.fastfetch-palette span:nth-child(2) {
+  background: #d99032;
+}
+
+.fastfetch-palette span:nth-child(3) {
+  background: var(--danger);
+}
+
+.fastfetch-palette span:nth-child(4) {
+  background: #22c55e;
+}
+
+.fastfetch-palette span:nth-child(5) {
+  background: var(--text-soft);
+}
+
+.fastfetch-palette span:nth-child(6) {
+  background: var(--muted);
 }
 
 .system-card-grid {
@@ -395,6 +466,9 @@ img {
 }
 
 .metric-tile {
+  display: grid;
+  align-content: space-between;
+  gap: 12px;
   min-height: 114px;
   padding: 18px;
 }
@@ -402,13 +476,13 @@ img {
 .metric-tile strong {
   display: block;
   color: var(--text);
-  font-size: clamp(1.9rem, 3vw, 2.6rem);
-  line-height: 1;
+  font-size: clamp(1.7rem, 2.6vw, 2.45rem);
+  line-height: 1.02;
+  overflow-wrap: anywhere;
 }
 
 .metric-tile span {
   display: block;
-  margin-top: 10px;
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 800;
@@ -1165,10 +1239,14 @@ img {
     font-size: 2.18rem;
   }
 
-  .ascii-mark,
-  .terminal-code {
-    padding-left: 16px;
-    padding-right: 16px;
-    font-size: 0.74rem;
+  .fastfetch-body {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px;
+    font-size: 0.76rem;
+  }
+
+  .fastfetch-row {
+    grid-template-columns: 66px 8px minmax(0, 1fr);
   }
 }

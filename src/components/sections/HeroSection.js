@@ -2,6 +2,15 @@ import React from "react";
 import { FiArrowUpRight, FiDownload, FiMail, FiMapPin } from "react-icons/fi";
 import pdf from "../../assets/Mihir_Panchal.pdf";
 
+const fetchRows = [
+  ["Name", "Mihir Panchal"],
+  ["Role", "Full-stack software engineer"],
+  ["Work", "CondAI + devSemble"],
+  ["Focus", "RBAC, queues, realtime, data"],
+  ["Stack", "React, NestJS, Node, Prisma"],
+  ["Runtime", "AWS, Nginx, PM2, Docker"],
+];
+
 function HeroSection({ stats, focusAreas }) {
   return (
     <section id="home" className="hero-section section-frame">
@@ -45,21 +54,39 @@ function HeroSection({ stats, focusAreas }) {
             <span className="terminal-dot" />
             <span className="terminal-dot" />
             <span className="terminal-dot" />
-            <span>~/mihir.systems</span>
+            <span>mihir@portfolio:~</span>
           </div>
-          <pre className="ascii-mark" aria-hidden="true">
-{`+----------------------+
-|  MIHIR PANCHAL      |
-|  SYSTEMS BUILDER    |
-+----------------------+`}
-          </pre>
-          <div className="terminal-code" aria-label="Profile code sample">
-            <p><span>const</span> profile = {"{"}</p>
-            <p> role: "software engineer",</p>
-            <p> current: "CondAI + devSemble",</p>
-            <p> systems: ["RBAC", "queues", "judge"],</p>
-            <p> deploys: ["AWS", "Nginx", "PM2"],</p>
-            <p>{"}"};</p>
+          <div className="fastfetch-body" aria-label="Fastfetch style profile summary">
+            <pre className="fastfetch-logo" aria-hidden="true">
+{` __  __   ____
+|  \\/  | |  _ \\
+| |\\/| | | |_) |
+| |  | | |  __/
+|_|  |_| |_|
+
+mihir.systems`}
+            </pre>
+            <div className="fastfetch-output">
+              <p className="fastfetch-command"><span>$</span> mihirctl profile</p>
+              <div className="fastfetch-identity">mihir@portfolio</div>
+              <div className="fastfetch-lines">
+                {fetchRows.map(([label, value]) => (
+                  <p className="fastfetch-row" key={label}>
+                    <span className="fastfetch-label">{label}</span>
+                    <span className="fastfetch-separator">:</span>
+                    <span>{value}</span>
+                  </p>
+                ))}
+              </div>
+              <div className="fastfetch-palette" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
           </div>
         </div>
 
